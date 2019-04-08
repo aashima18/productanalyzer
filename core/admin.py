@@ -1,10 +1,9 @@
 from django.contrib import admin
-from .models import product , user , review , report
+from .models import Product  , review, Search
 
 
-admin.site.register(product)
-admin.site.register(user)
+admin.site.register(Product)
 admin.site.register(review)
-admin.site.register(report)
+admin.site.register(Search)
 
 

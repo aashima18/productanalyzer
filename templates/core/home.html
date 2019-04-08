@@ -29,16 +29,40 @@
                                     </div>
                                     <!--end of col-->
                                     <div class="col">
-                                        <input class="form-control form-control-lg form-control-borderless" type="search" name="query" placeholder="Search topics or keywords">
+                                        <input class="form-control form-control-lg form-control-borderless" type="search" name="query" pla
+                                        ceholder="Search topics or keywords">
                                     </div>
                                     <!--end of col-->
                                     <div class="col-auto">
                                         <button class="btn btn-lg btn-success" type="submit">Search</button>
                                     </div>
                                     <!--end of col-->
+                                    
                                 </div>
                             </form>
                         </div>
+                        {% if a %}
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>S No</th>
+                                <th>Name</th>
+                               
+                            </tr>
+                            {% for result in a %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>
+                                    <a href={{result}}>{{ result }}</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                        {{squery}}
+                        <a href="{% url 'spider' %}?links={{ squery|urlencode }}">View</a>
+                        {% else %}
+                        {% endif %}
                         <!--end of col-->
                     </div>
 </div>
+
+

@@ -1,0 +1,39 @@
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+         
+
+<div class="box">
+        <div class="box-header">
+          <h3 class="box-title">Product Comparison</h3>
+        </div>
+        <div class="box-body">
+          <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Category</th>
+              <th>Specifications</th>
+              <th>Rating</th>
+              <th>Reviews</th>
+              
+            </tr>
+            </thead>
+            <tbody>
+            {% for a in dta %}
+            <tr>
+              <td>{{a.product_name}}</td>
+              <td>{{a.price}}</td>
+              <td>{{a.category}}</td>
+              <td>{{a.specifications</td>
+              <td>{{a.Rating}}</td>
+              <td>{{a.Reviews}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
