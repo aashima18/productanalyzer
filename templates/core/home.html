@@ -1,26 +1,115 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{% static "img/favicon.png" %}" type="image/png">
+        <title>Product Analyzer</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href= "{% static "css/bootstrap.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/linericon/style.css" %}">
+        <link rel="stylesheet" href= "{% static "css/font-awesome.min.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/owl-carousel/owl.carousel.min.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/lightbox/simpleLightbox.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/nice-select/css/nice-select.css" %}">
+        <link rel="stylesheet" href="{% static "vendors/animate-css/animate.css" %}">
+        <!-- main css -->
+        <link rel="stylesheet" href= "{% static "css/style.css" %}">
+        <link rel="stylesheet" href="{% static "css/responsive.css" %}">
+		
+		<link rel="stylesheet" href="{% static "css/stylee.css" %}">
+    
+        
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!------ Include the above in your HEAD tag ---------->
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
 <style>
 .form-control-borderless {
     border: none;
 }
-
 .form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
     border: none;
     outline: none;
     box-shadow: none;
 }
 
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
 </style>
 
-<div class="container">
+</head>
+    <body>
+<header class="header_area">
+            <div class="main_menu">
+            	<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container box_1620">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<a class="navbar-brand logo_h" href="index.html"><img src="{% static "img/log.png" %}" alt=""  width="70" height="70"></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav justify-content-center">
+								<li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Home</a></li> 
+								<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li> 
+								<li class="nav-item"><a class="nav-link" href="{% url 'abc' %}">Analyzer</a>
+								
+								
+								</li> 
+								<li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'contactform' %}">Feedback</a></li>
+							</ul>
+							
+						</div> 
+					</div>
+            	</nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
+        
+        <!--================Home Banner Area =================-->
+        <section style=" min-height: fit-content" class="banner_area">
+            <div style=" min-height: 80px;"class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					
+				</div>
+            </div>
+        </section>
+      
+<div style="top-margin:200px"; class="container" >
     <br/>
-	<div class="row justify-content-center">
+	<div  class="row justify-content-center">
                         <div class="col-12 col-md-10 col-lg-8">
                             <form class="card card-sm" method="post">{% csrf_token %}
                                 <div class="card-body row no-gutters align-items-center">
@@ -30,39 +119,98 @@
                                     <!--end of col-->
                                     <div class="col">
                                         <input class="form-control form-control-lg form-control-borderless" type="search" name="query" pla
-                                        ceholder="Search topics or keywords">
+                                        ceholder="Search topics or keywords"style="top-margin:200px";>
                                     </div>
                                     <!--end of col-->
                                     <div class="col-auto">
-                                        <button class="btn btn-lg btn-success" type="submit">Search</button>
+                                        <button  class="btn btn-lg btn-success" type="submit" style="color: black;background-color: cornflowerblue;;border-color: black;">Search</button>
                                     </div>
                                     <!--end of col-->
                                     
                                 </div>
                             </form>
                         </div>
+
+                        
+
+
+
+
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 
+                           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 
+                           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 
+                           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 
                         {% if a %}
-                        <table class="table table-bordered">
-                            <tr>
-                                <th>S No</th>
-                                <th>Name</th>
+                        <table id="customers">
+                            <tr >
+                                <th style="background-color: cornflowerblue;">S No</th>
+                                <th style="background-color: cornflowerblue;">Name</th>
                                
                             </tr>
                             {% for result in a %}
                             <tr>
                                 <td>{{ forloop.counter }}</td>
                                 <td>
-                                    <a href={{result}}>{{ result }}</a>
+                                <a href={{ result }}>{{ result }}</a>
                                 </td>
                             </tr>
                             {% endfor %}
                         </table>
-                        {{squery}}
-                        <a href="{% url 'spider' %}?links={{ squery|urlencode }}">View</a>
+                        
+                        <a href="{% url 'spider' %}?links={{ squery|urlencode }}" class="btn btn-primary" style="margin-top:100px">{{squery}}</a>
+                    
                         {% else %}
                         {% endif %}
                         <!--end of col-->
                     </div>
 </div>
 
-
+<!--================Footer Area =================-->
+        <section id="footer">
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+					<ul class="list-unstyled list-inline social text-center">
+						<li class="list-inline-item"><a href="javascript:void();"> <a href="https://www.facebook.com/">  <i style=" color: white;font-size: 24px;"class="fa fa-facebook"></i></a></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><a href="https://twitter.com/login?lang=en"><i style=" color: white;font-size: 24px;" class="fa fa-twitter"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><a href="https://www.instagram.com/"><i style=" color: white;font-size: 24px;" class="fa fa-instagram"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i style=" color: white;font-size: 24px;" class="fa fa-google-plus"></i></a></li>
+						
+					</ul>
+				</div>
+				</hr>
+			</div>	
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+					
+					<p class="h6">&copy All right Reversed.<a class="text-green ml-2"  target="_blank">panalyzer</a></p>
+				</div>
+				</hr>
+			</div>	
+		</div>
+	</section>
+	
+	<!-- ./Footer -->
+        <!--================End Footer Area =================-->
+   
+        <!--================End Footer Area =================-->
+        
+        
+        
+        
+       

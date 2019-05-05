@@ -12,30 +12,40 @@ class Search(models.Model):
 
 
 
-
+class Review(models.Model):
+    rating = models.CharField(max_length=25, null=True, blank=True)
+    no_reviews = models.CharField(max_length=50,  null=True, blank=True)
+    
+    star5 = models.CharField(max_length=5,  null=True, blank=True)
+    star4 = models.CharField(max_length=5,  null=True, blank=True)
+    star3 = models.CharField(max_length=5,  null=True, blank=True)
+    star2 = models.CharField(max_length=5,  null=True, blank=True)
+    star1 = models.CharField(max_length=5,  null=True, blank=True)
+    
+    def __str__(self):
+        return self.rating
 
 
 class Product(models.Model):
+    rating = models.CharField(max_length=25, null=True, blank=True)
+    no_reviews = models.CharField(max_length=50,  null=True, blank=True)
+    star5 = models.CharField(max_length=15,  null=True, blank=True)
+    star4 = models.CharField(max_length=15,  null=True, blank=True)
+    star3 = models.CharField(max_length=15,  null=True, blank=True)
+    star2 = models.CharField(max_length=15,  null=True, blank=True)
+    star1 = models.CharField(max_length=15,  null=True, blank=True)    
     search = models.ForeignKey(Search, on_delete=models.CASCADE)
     product_name = models.CharField(max_length=15, null=True, blank=True)
     price = models.CharField(max_length=35, null=True, blank=True)
-    category = models.CharField(max_length=15, null=True, blank=True)
+    url = models.CharField(max_length=15, null=True, blank=True)
     specifications = models.TextField(null=True, blank=True)
+
     def __str__(self):
         return self.product_name
 
-
-
-
-class review(models.Model):
-    comment_title = models.CharField(max_length=10)
-    user_name = models.ForeignKey(User , on_delete = models.CASCADE)
-    product_name = models.ForeignKey(Product , on_delete = models.CASCADE)
-    rating = models.DecimalField(max_digits=5, decimal_places=2)
-    reviews = models.CharField(max_length=50)
-    post_date = models.DateField()
+class Feedback(models.Model):
+    name=models.CharField(max_length=50)
+    email=models.EmailField()
+    message=models.TextField(max_length=200)
     def __str__(self):
-        return self.comment_title
-
-
-
+        return self.name

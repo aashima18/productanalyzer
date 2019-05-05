@@ -1,39 +1,184 @@
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Product Analyzer</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-         
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href= "{% static "css/bootstrap.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/linericon/style.css" %}">
+        <link rel="stylesheet" href= "{% static "css/font-awesome.min.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/owl-carousel/owl.carousel.min.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/lightbox/simpleLightbox.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/nice-select/css/nice-select.css" %}">
+        <link rel="stylesheet" href="{% static "vendors/animate-css/animate.css" %}">
+        <!-- main css -->
+        <link rel="stylesheet" href= "{% static "css/style.css" %}">
+        <link rel="stylesheet" href="{% static "css/responsive.css" %}">
+		
+		<link rel="stylesheet" href="{% static "css/stylee.css" %}">
+<!--===============================================================================================-->	
+	<link rel="icon" type="img/png" href="img/icons1/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap1/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.01/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate1/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select21/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/perfect-scrollbar1/perfect-scrollbar.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util1.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main1.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+<header class="header_area">
+            <div class="main_menu">
+            	<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container box_1620">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<a class="navbar-brand logo_h" href="data.html"><img src={% static "img/logo.png" %}" alt=""></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav justify-content-center">
+								<li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Home</a></li> 
+								<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li> 
+								<li class="nav-item"><a class="nav-link" href="{% url 'abc' %}">Analyzer</a>
+								
+								
+								</li> 
+								<li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'contactform' %}">Feedback</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<li class="nav-item"><a href="{% url 'signup' %}" class="tickets_btn">signup</a></li>
+							</ul>
+						</div> 
+					</div>
+            	</nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
+        
+        <!--================Home Banner Area =================-->
+        <section style=" min-height: fit-content" class="banner_area">
+            <div style=" min-height: 80px;"class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					
+				</div>
+            </div>
+        </section>
+	
+	<div class="limiter">
+		<div style="background: linear-gradient(45deg, #4158d0, #c850);"class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">PRODUCT_NAME</th>
+								<th class="column2">URL</th>
+								<th class="column3">PRICE</th>
+								<th class="column4">RATING</th>
+								<th class="column5">NO_REVIEWS</th>
+								<th class="column5">REVIEWS</th>
+								<th class="column5">ANALYSIS</th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for a in dta %}	
+						<tr>
+								
+							<td class="column1">{{a.product_name}}</td>
+							<td class="column2"><a href="{{a.url}}"></a>{{a.url}}</td>
+							<td class="column3">{{a.price}}</td>
+							<td class="column4">{{a.rating}}</td>
+							<td class="column5">{{a.no_reviews}}</td>
+							<td class="column5">{{a.reviews}}</td>
+							<td  class="column6"><a style="color: black;" href="{% url 'graph' %}?links={{ a.id|urlencode }}" >view graph</a></td>
+									
+						</tr>
+								
+						{% endfor %}		
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--================Footer Area =================-->
+        <section id="footer">
+		<div style="line-height: 10px;"class="container">
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+					<ul class="list-unstyled list-inline social text-center">
+						<li class="list-inline-item"><a href="javascript:void();"> <a href="https://www.facebook.com/">  <i style=" color: white;font-size: 24px;"class="fa fa-facebook"></i></a></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><a href="https://twitter.com/login?lang=en"><i style=" color: white;font-size: 24px;" class="fa fa-twitter"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><a href="https://www.instagram.com/"><i style=" color: white;font-size: 24px;" class="fa fa-instagram"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i style=" color: white;font-size: 24px;" class="fa fa-google-plus"></i></a></li>
+						
+					</ul>
+				</div>
+				</hr>
+			</div>	
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+					
+					<p class="h6">&copy All right Reversed.<a class="text-green ml-2"  target="_blank">panalyzer</a></p>
+				</div>
+				</hr>
+			</div>	
+		</div>
+	</section>
+	
+	<!-- ./Footer -->
+        <!--================End Footer Area =================-->
+   
+        <!--================End Footer Area =================-->
+        
+        
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
+        <script src="{% static "js/popper.js" %}"></script>
+        <script src="{% static "js/bootstrap.min.js" %}"></script>
+        <script src="{% static "js/stellar.js" %}"></script>
+        <script src="{% static "vendors/lightbox/simpleLightbox.min.js" %}"></script>
+        <script src="{% static "vendors/nice-select/js/jquery.nice-select.min.js" %}"></script>
+        <script src="{% static "vendors/isotope/imagesloaded.pkgd.min.js" %}"></script>
+        <script src="{% static "vendors/isotope/isotope-min.js" %}"></script>
+        <script src="{% static "vendors/owl-carousel/owl.carousel.min.js" %}"></script>
+        <script src="{% static "js/jquery.ajaxchimp.min.js" %}"></script>
+        <script src="{% static "js/mail-script.js" %}"></script>
+        <script src="{% static "vendors/counter-up/jquery.waypoints.min.js" %}"></script>
+        <script src="{% static "vendors/counter-up/jquery.counterup.min.js" %}"></script>
+        <script src="{% static "js/theme.js" %}"></script>
 
-<div class="box">
-        <div class="box-header">
-          <h3 class="box-title">Product Comparison</h3>
-        </div>
-        <div class="box-body">
-          <table id="example1" class="table table-bordered table-striped">
-            <thead>
-            <tr>
-              <th>Product Name</th>
-              <th>Price</th>
-              <th>Category</th>
-              <th>Specifications</th>
-              <th>Rating</th>
-              <th>Reviews</th>
-              
-            </tr>
-            </thead>
-            <tbody>
-            {% for a in dta %}
-            <tr>
-              <td>{{a.product_name}}</td>
-              <td>{{a.price}}</td>
-              <td>{{a.category}}</td>
-              <td>{{a.specifications</td>
-              <td>{{a.Rating}}</td>
-              <td>{{a.Reviews}}</td>
-            </tr>
-            {% endfor %}
-            </tbody>
-          </table>
-        </div>
-      </div>
+	
+
+<!--===============================================================================================-->	
+	<script src="{% static 'vendor/jquery1/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/bootstrap1/js/popper.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap1/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/select21/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main1.js' %}"></script>
+
+</body>
+</html>

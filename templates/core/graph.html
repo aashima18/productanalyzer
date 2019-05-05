@@ -1,0 +1,120 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{% static "img/favicon.png" %}" type="image/png">
+        <title>Product Analyzer</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href= "{% static "css/bootstrap.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/linericon/style.css" %}">
+        <link rel="stylesheet" href= "{% static "css/font-awesome.min.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/owl-carousel/owl.carousel.min.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/lightbox/simpleLightbox.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/nice-select/css/nice-select.css" %}">
+        <link rel="stylesheet" href="{% static "vendors/animate-css/animate.css" %}">
+        <!-- main css -->
+        <link rel="stylesheet" href= "{% static "css/style.css" %}">
+        <link rel="stylesheet" href="{% static "css/responsive.css" %}">
+		
+		<link rel="stylesheet" href="{% static "css/stylee.css" %}">
+    </head>
+    <body >
+        
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+            <div class="main_menu">
+            	<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container box_1620">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<a class="navbar-brand logo_h" href="index.html"><img src={% static "img/logo.png" %}" alt=""></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav justify-content-center">
+								<li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Home</a></li> 
+								<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li> 
+								<li class="nav-item"><a class="nav-link" href="{% url 'abc' %}">Analyzer</a>
+								
+								
+								</li> 
+								<li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'contactform' %}">Feedback</a></li>
+							</ul>
+							
+						</div> 
+					</div>
+            	</nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
+        
+        <!--================Home Banner Area =================-->
+        <section style=" min-height: fit-content" class="banner_area">
+            <div style=" min-height: 80px;"class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					
+				</div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+<script type="text/javascript" src=" http://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script> 
+<script type="text/javascript" src=" http://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="chart-1" style="background-color: turquoise;">{{ output|safe }}</div>
+
+
+ <!--================Footer Area =================-->
+        <section id="footer">
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+					<ul class="list-unstyled list-inline social text-center">
+						<li class="list-inline-item"><a href="javascript:void();"> <a href="https://www.facebook.com/">  <i style=" color: white;font-size: 24px;"class="fa fa-facebook"></i></a></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><a href="https://twitter.com/login?lang=en"><i style=" color: white;font-size: 24px;" class="fa fa-twitter"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><a href="https://www.instagram.com/"><i style=" color: white;font-size: 24px;" class="fa fa-instagram"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i style=" color: white;font-size: 24px;" class="fa fa-google-plus"></i></a></li>
+						
+					</ul>
+				</div>
+				</hr>
+			</div>	
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+					
+					<p class="h6">&copy All right Reversed.<a class="text-green ml-2"  target="_blank">panalyzer</a></p>
+				</div>
+				</hr>
+			</div>	
+		</div>
+	</section>
+	
+	<!-- ./Footer -->
+        <!--================End Footer Area ================

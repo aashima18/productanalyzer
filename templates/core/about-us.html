@@ -1,0 +1,206 @@
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{% static "img/favicon.png" %}" type="image/png">
+        <title>Product Analyzer</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href= "{% static "css/bootstrap.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/linericon/style.css" %}">
+        <link rel="stylesheet" href= "{% static "css/font-awesome.min.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/owl-carousel/owl.carousel.min.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/lightbox/simpleLightbox.css" %}">
+        <link rel="stylesheet" href= "{% static "vendors/nice-select/css/nice-select.css" %}">
+        <link rel="stylesheet" href="{% static "vendors/animate-css/animate.css" %}">
+        <!-- main css -->
+        <link rel="stylesheet" href= "{% static "css/style.css" %}">
+        <link rel="stylesheet" href="{% static "css/responsive.css" %}">
+		
+		<link rel="stylesheet" href="{% static "css/stylee.css" %}">
+    </head>
+    <body>
+        
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+            <div class="main_menu">
+            	<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container box_1620">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<a class="navbar-brand logo_h" href="index.html"><img src="{% static "img/log.png" %}" alt="" width="50" height="20"></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav justify-content-center">
+								<li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Home</a></li> 
+								<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li> 
+								<li class="nav-item"><a class="nav-link" href="{% url 'abc' %}">Analyzer</a>
+								
+								
+								</li> 
+								<li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'contactform' %}">Feedback</a></li>
+							</ul>
+							
+						</div> 
+					</div>
+            	</nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
+        
+        <!--================Home Banner Area =================-->
+        <section style=" min-height: fit-content" class="banner_area">
+            <div style=" min-height: 80px;"class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+        
+        <!--================Made Life Area =================-->
+    
+		<section class="about section-margin mb-5">
+		<div style=" min-height: 500px;"class="container">
+			<div class="row align-items-center">
+				<div class="col-md-5">
+					<div class="about__img text-center text-md-left mb-5 mb-md-0">
+						<img class="img-fluid" src="{% static "img/5.JPG" %}" alt="">
+						<a style=" background: darkturquoise;" href="#/" class="about__img__date text-center">
+							<h3>26+</h3>
+							<p>products <br>to analyze</p>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-7 pl-xl-5">
+					<div class="section-intro">
+						<h4 style="font-size: xx-large;font-style: italic;"class="section-intro__title">About our Analyzer Tool</h4>
+						<h2 style="font-size: 1.6rem;color:white; line-height: 1.2em;"class="section-intro__subtitle">We've been creating Awesome Product Analyzer</h2>
+					</div>
+					<p style="font-size: 18px;">A product may need analysing by a potential customer to help him/her decide whether it is worth buying. A product may need analysing so that the design can be improved. Sometimes a prototype or model may be analysed. In this way improvements can be made before the full sized, costly product is manufactured.</p>
+					<p style="font-size: 18px;">In this experiment, we have proposed a system which makes classification based on keywords, ratings and reviews. In this product analyzer,
+we compare product reviews from different websites, so that decision making will be a lot easier for the user regarding purchasing
+of the product. </p>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+
+	<section class="overview section-margin mt-0">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-lg-4 col-xl-3 mb-4 mb-xl-0">
+					<div class="media align-items-center overview__single">
+						<span class="overview__single__icon"><i class="ti-crown"></i></span>
+						<div class="media-body">
+							<h3>286+</h3>
+							<p>Products</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-4 col-xl-3 mb-4 mb-xl-0">
+					<div class="media align-items-center overview__single">
+						<span class="overview__single__icon"><i class="ti-face-smile"></i></span>
+						<div class="media-body">
+							<h3>942+</h3>
+							<p>Happy Clients</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-4 col-xl-3 mb-4 mb-xl-0">
+					<div class="media align-items-center overview__single">
+						<span class="overview__single__icon"><i class="ti-user"></i></span>
+						<div class="media-body">
+							<h3>263+</h3>
+							<p>Real reviews and ratings</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-4 col-xl-3 mb-4 mb-xl-0">
+					<div class="media align-items-center overview__single">
+						<span class="overview__single__icon"><i class="ti-gift"></i></span>
+						<div class="media-body">
+							<h3>2000+</h3>
+							<p>Cups of Coffee</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+        <!--================End Made Life Area =================-->
+        
+        
+        <!--================Made Life Area =================-->
+        <section style="padding-top: 30px;" class="made_life_area p_120">
+        
+        </section>
+        <!--================End Made Life Area =================-->
+        
+               <!--================Footer Area =================-->
+        <section id="footer">
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+					<ul class="list-unstyled list-inline social text-center">
+						<li class="list-inline-item"><a href="javascript:void();"> <a href="https://www.facebook.com/">  <i style=" color: white;font-size: 24px;"class="fa fa-facebook"></i></a></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><a href="https://twitter.com/login?lang=en"><i style=" color: white;font-size: 24px;" class="fa fa-twitter"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><a href="https://www.instagram.com/"><i style=" color: white;font-size: 24px;" class="fa fa-instagram"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i style=" color: white;font-size: 24px;" class="fa fa-google-plus"></i></a></li>
+						
+					</ul>
+				</div>
+				</hr>
+			</div>	
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+					
+					<p class="h6">&copy All right Reversed.<a class="text-green ml-2"  target="_blank">panalyzer</a></p>
+				</div>
+				</hr>
+			</div>	
+		</div>
+	</section>
+	
+	<!-- ./Footer -->
+        <!--================End Footer Area =================-->
+   
+        <!--================End Footer Area =================-->
+        
+        
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{% static "js/jquery-3.2.1.min.js" %}"></script>
+        <script src="{% static "js/popper.js" %}"></script>
+        <script src="{% static "js/bootstrap.min.js" %}"></script>
+        <script src="{% static "js/stellar.js" %}"></script>
+        <script src="{% static "vendors/lightbox/simpleLightbox.min.js" %}"></script>
+        <script src="{% static "vendors/nice-select/js/jquery.nice-select.min.js" %}"></script>
+        <script src="{% static "vendors/isotope/imagesloaded.pkgd.min.js" %}"></script>
+        <script src="{% static "vendors/isotope/isotope-min.js" %}"></script>
+        <script src="{% static "vendors/owl-carousel/owl.carousel.min.js" %}"></script>
+        <script src="{% static "js/jquery.ajaxchimp.min.js" %}"></script>
+        <script src="{% static "js/mail-script.js" %}"></script>
+        <script src="{% static "vendors/counter-up/jquery.waypoints.min.js" %}"></script>
+        <script src="{% static "vendors/counter-up/jquery.counterup.min.js" %}"></script>
+        <script src="{% static "js/theme.js" %}"></script>
+    </body>
+</html>
