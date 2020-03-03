@@ -25,17 +25,17 @@ class ABC(FormView):
         query = form.cleaned_data.get('query', None)
         #qq = input()
         q = { 'q' : query}
-
         url = "https://www.google.com/search?{}".format(urlencode(q))
         raw = get(url).text
-
         page = fromstring(raw)
         allinks = []
-        for result in page.cssselect(".r a"):
+        for result in page.cssselect("a"):
             url = result.get("href")
+         
             if url.startswith("/url?"):
                 url = parse_qs(urlparse(url).query)['q']
                 a = url[0]
+               
                 sites = ['amazon.in', 'flipkart.com']
                 allinks.append(a)
                 aallinks = [i for e in sites for i in allinks if e in i]
@@ -259,15 +259,6 @@ def contact(request):
 
 
 
-# def feedback(request):
-#     form = FeedbackForm(request.POST or None)
-#     print(form)
-#     if form.is_valid():
-#         abc = form.save(commit=False)
-#         abc.save()
-#         return render(request, 'core/contactform.html', {'form':form})  
-#     else:
-#         return render(request,'core/contactform.html', {'form' : form})
 
 def feedback(request):
     if request.method == 'POST':
@@ -276,6 +267,7 @@ def feedback(request):
             post.name= request.POST.get('name')
             post.email= request.POST.get('email')
             post.message= request.POST.get('message')
+            print("dwsfs")
             post.save()
             return render(request, 'core/contactform.html')  
 
